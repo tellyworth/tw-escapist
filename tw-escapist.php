@@ -177,8 +177,7 @@ class TW_Escapist {
 			}
 			
 			if ( preg_match( '/[-+\s]\d/', $_sql ) ) {
-				$this->log( 'Query contains unescaped numeric literal: ' . $_sql . "\n" . $sql );
-				error_log( var_export( $wpdb->escaped, true ) );
+				$this->log( 'Query contains unescaped numeric literal: ' . $_sql );
 			}
 			
 			if ( preg_match( '/\s[xX]\'/', $_sql ) ) {
@@ -189,7 +188,6 @@ class TW_Escapist {
 				$this->log( 'Query contains unescaped bitfield value: ' . $_sql );
 			}
 			
-#			error_log( $_sql );
 		}
 		
 		
